@@ -21,7 +21,6 @@ public class ConnectionUtils {
 		try {
 			connection = DriverManager.getConnection (URL, USER_NAME, USER_PASSWORD);
 		} catch (Exception e) {
-			
 			LOG.error("no connection to db");
 		}
 		return connection;
