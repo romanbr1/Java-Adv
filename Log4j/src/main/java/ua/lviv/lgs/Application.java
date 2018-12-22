@@ -16,11 +16,11 @@ public class Application {
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		
 		DOMConfigurator.configure("loggerConfig.xml");	
-		LOG.info("start application");
+		LOG.info("start of application");
 		
 		MagazineDao magazineDao = new MagazineDao(ConnectionUtils.openConnection());
 		UserDao userDao = new UserDao(ConnectionUtils.openConnection());
-		LOG.info(" successful connection");
+		LOG.info("successful connection");
 		
 		// READ ALL
 		System.out.println("---- MAGAZINES");
@@ -28,32 +28,6 @@ public class Application {
 		System.out.println("---- USERS");
 		userDao.readAll().stream().forEach(System.out::println);
 		System.out.println("**********************************************************");
-//		List<Magazine> listOfMagazine = new ArrayList<>();
-//		listOfMagazine.add(new Magazine("Test drive", "Auto"));
-//		listOfMagazine.add(new Magazine("Country secrets", "Garden"));
-//		listOfMagazine.add(new Magazine("Mens Fitness", "Sport"));
-//		listOfMagazine.add(new Magazine("4*4", "Auto"));
-//		listOfMagazine.add(new Magazine("Country secrets #2", "Garden"));
-//		listOfMagazine.add(new Magazine("Iron world", "Sport"));
-		// INSERT Magazines
-//		listOfMagazine.forEach(employee->{
-//			try {
-//				magazineDao.insert(employee);
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		});
-//		System.out.println("**********************************************************");
-		// INSERT Users
-//		List<User> listOfUser = new ArrayList<>();
-//		listOfUser.add(new User("Mike", "Smith"));
-//		listOfUser.forEach(user->{
-//			try {
-//				userDao.insert(user);
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		});
 
 //		READ BY ID
 		Magazine magazineFromDB = magazineDao.read(2);
@@ -84,6 +58,7 @@ public class Application {
 
 //		READ ALL
 		userDao.readAll().stream().forEach(System.out::println);
-		LOG.info("end application");
+		
+		LOG.info("end of application");
 	}
 }
