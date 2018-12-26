@@ -72,7 +72,7 @@ public class Application {
 		System.out.println("**********************************************************");
 		
 //		READ BY ID
-		UserDB userFromDB = userDao.read(2);
+		User userFromDB = userDao.read(2);
 		System.out.println(userFromDB);
 
 //		UPDATE BY ID 

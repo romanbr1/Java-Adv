@@ -1,18 +1,41 @@
 package ua.lviv.lgs;
 
 public class User {
+	private int user_id;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
 	
-	public User(String firstName, String lastName, String email, String password) {
+	
+	public User(int user_id,String firstName, String lastName, String email, String password) {
+		this.user_id = user_id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 	}
 	
+	public User(String firstName, String lastName, String email, String password) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
+
+	
+
+
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

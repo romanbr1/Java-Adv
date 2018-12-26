@@ -5,11 +5,13 @@ import java.sql.SQLException;
 
 public class UserMapper {
 	
-	public static  UserDB map(ResultSet result) throws SQLException {
-		int userId=result.getInt("user_id");
+	public static  User map(ResultSet result) throws SQLException {
+		int user_id=result.getInt("user_id");
 		String firstName = result.getString("first_name");
 		String lastName = result.getString("last_name");
-		return new UserDB(userId, firstName, lastName);
+		String email = result.getString("email");
+		String password = result.getString("password");
+		return new User(user_id, firstName, lastName, email, password);
 	}
 	
 }

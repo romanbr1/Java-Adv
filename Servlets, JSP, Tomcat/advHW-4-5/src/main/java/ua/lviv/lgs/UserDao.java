@@ -25,7 +25,7 @@ public class UserDao {
 		this.connection = connection;
 	}
 
-	public void insert(UserDB user) throws SQLException {
+	public void insert(User user) throws SQLException {
 		try {
 			preparedStatement = connection.prepareStatement(CREATE);
 			preparedStatement.setString(1, user.getFirstName());
@@ -36,7 +36,7 @@ public class UserDao {
 		}
 	}
 
-	public UserDB read(int id) throws SQLException {
+	public User read(int id) throws SQLException {
 		ResultSet result = null;
 		try {
 			preparedStatement = connection.prepareStatement(READ_BY_ID);
@@ -51,12 +51,12 @@ public class UserDao {
 
 	}
 
-	public void update(UserDB user) throws SQLException {
+	public void update(User user) throws SQLException {
 		try {
 			preparedStatement = connection.prepareStatement(UPDATE_BY_ID);
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
-			preparedStatement.setInt(3, user.getUserId());
+			preparedStatement.setInt(3, user.getUser_id());
 			preparedStatement.executeUpdate();
 		} catch (Exception e) {
 			LOG.error("User update ERROR");
@@ -73,8 +73,8 @@ public class UserDao {
 		}
 	}
 
-	List<UserDB> readAll() throws SQLException {
-		List<UserDB> listOfEmployee = new ArrayList<>();
+	List<User> readAll() throws SQLException {
+		List<User> listOfEmployee = new ArrayList<>();
 		preparedStatement = connection.prepareStatement(READ_ALL);
 		ResultSet result = preparedStatement.executeQuery();
 		while (result.next()) {
