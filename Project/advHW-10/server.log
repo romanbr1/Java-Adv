@@ -51,3 +51,12 @@
 2019-01-23 22:26:10 ERROR MagazineDaoImpl:50 - sss
 2019-01-23 22:35:03 ERROR MagazineDaoImpl:50 - sss
 2019-01-23 22:35:12 ERROR MagazineDaoImpl:50 - sss
+2019-01-28 20:27:19 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:32:18 ERROR MagazineDaoImpl:49 - com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'price' at row 1
+2019-01-28 20:32:18 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:32:50 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:33:03 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:41:16 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:44:10 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:44:36 ERROR MagazineDaoImpl:51 - sss
+2019-01-28 20:45:26 ERROR MagazineDaoImpl:51 - sss

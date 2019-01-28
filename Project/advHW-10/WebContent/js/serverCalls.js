@@ -6,11 +6,12 @@ $("button.createMagazine")
  					var title = $("form.createMagazine input.magazineTitle").val();
 					var category = $("form.createMagazine input.magazineCategory").val();
 					var price = $("form.createMagazine input.magazinePrice").val();
-
+					var description = $("form.createMagazine input.magazineDescription").val();
  						var magazine = {
 								title : title,
 								category : category,
-								price : price
+								price : price,
+								description : description
 						};
 //add validation
 						$.post("magazine", magazine,

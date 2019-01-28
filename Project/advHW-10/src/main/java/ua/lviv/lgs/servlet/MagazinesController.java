@@ -17,6 +17,10 @@ import ua.lviv.lgs.service.impl.MagazineServiceImpl;
 
  @WebServlet("/magazines")
 public class MagazinesController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private MagazineService magazineService = MagazineServiceImpl.getMagazineService();
 
  	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

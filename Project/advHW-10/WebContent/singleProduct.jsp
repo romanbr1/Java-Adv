@@ -30,7 +30,7 @@ magazineId_id<%@ page language="java" contentType="text/html; charset=UTF-8"
 					<h5 class="card-title">${magazine.title}</h5>
 					<h6 class="card-subtitle mb-2 text-muted">${magazine.price}</h6>
 					<p class="card-text">${magazine.category}</p>
-
+<p class="card-text">${magazine.description}</p>
 
 
  					<button type="button" class="btn btn-primary" data-toggle="modal"

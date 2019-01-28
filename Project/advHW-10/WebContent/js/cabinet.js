@@ -15,6 +15,7 @@ $.get("magazines", function(data) {
 					  "<h5 class='card-title'>" + value.title + "</h5>"+
 					  "<h6 class='card-subtitle mb-2 text-muted'>" + value.price + "</h6>"+
 					  "<p class='card-text'>" + value.category + "</p>"+
+					  "<p class='card-text'>" + value.description + "</p>"+
 					  "<a class='productCardElement'  href='magazine?id=" + value.id + "' class='card-link'>link</a>"+
 					  "</div>" +
 					  "</div>" +

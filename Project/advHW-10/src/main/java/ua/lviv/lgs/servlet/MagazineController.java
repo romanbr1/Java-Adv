@@ -27,8 +27,8 @@ public class MagazineController extends HttpServlet {
 		String title = request.getParameter("title");
 		String category = request.getParameter("category");
 		String price = request.getParameter("price");
-
-		Magazine magazine  = new Magazine(title, category, (float) getValidatedPrice(price));
+		String description = request.getParameter("description");
+		Magazine magazine  = new Magazine(title, category, (float) getValidatedPrice(price),description);
 		magazineService.create(magazine);
 		
 		response.setContentType("text");

@@ -17,7 +17,7 @@ import ua.lviv.lgs.utils.ConnectionUtils;
 public class MagazineDaoImpl implements MagazineDao {
 
 	private static String READ_ALL = "select * from magazines";
-	private static String CREATE = "insert into magazines(`title`,`category`,`price`) values (?,?,?)";
+	private static String CREATE = "insert into magazines(`title`,`category`,`price`,`description`) values (?,?,?,?)";
 	private static String READ_BY_ID = "select * from magazines where id=?";
 	private static String UPDATE_BY_ID = "update magazines set title=?, category=? where id=?";
 	private static String DELETE_BY_ID = "delete from magazines where id =?";
@@ -39,6 +39,7 @@ public class MagazineDaoImpl implements MagazineDao {
 			preparedStatement.setString(1, magazine.getTitle());
 			preparedStatement.setString(2, magazine.getCategory());
 			preparedStatement.setDouble(3, magazine.getPrice());
+			preparedStatement.setString(4, magazine.getDescription());
 			preparedStatement.executeUpdate();
 
 			ResultSet rs = preparedStatement.getGeneratedKeys();
@@ -64,7 +65,8 @@ public class MagazineDaoImpl implements MagazineDao {
 			String title = result.getString("title");
 			String category = result.getString("category");
 			Float price = result.getFloat("price");
-			magazine = new Magazine(magazineId, title, category, price);
+			String description = result.getString("description");
+			magazine = new Magazine(magazineId, title, category, price,description);
 
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -81,7 +83,8 @@ public class MagazineDaoImpl implements MagazineDao {
 			preparedStatement.setString(1, magazine.getTitle());
 			preparedStatement.setString(2, magazine.getCategory());
 			preparedStatement.setDouble(3, magazine.getPrice());
-			preparedStatement.setInt(4, magazine.getId());
+			preparedStatement.setString(4, magazine.getDescription());
+			preparedStatement.setInt(5, magazine.getId());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -112,8 +115,8 @@ public class MagazineDaoImpl implements MagazineDao {
 				String title = result.getString("title");
 				String category = result.getString("category");
 				Float purchasePrice = result.getFloat("price");
-
-				magazineRecords.add(new Magazine(id, title, category, purchasePrice));
+				String description = result.getString("description");
+				magazineRecords.add(new Magazine(id, title, category, purchasePrice, description));
 			}
 		} catch (SQLException e) {
 			LOGGER.error(e);
