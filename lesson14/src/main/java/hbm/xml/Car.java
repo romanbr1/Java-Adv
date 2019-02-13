@@ -10,7 +10,12 @@ public class Car {
 	
 	
 	
-	public Car(Integer id, String carModel, Set<Person> persons) {
+	public Car(String carModel) {
+		super();
+		this.carModel = carModel;
+	}
+
+	public Car(String carModel) {
 		super();
 		this.id = id;
 		this.carModel = carModel;

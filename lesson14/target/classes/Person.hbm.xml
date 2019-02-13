@@ -13,9 +13,9 @@
       <property name = "firstName" column = "firstname" type = "string"/>
       <property name = "lastName" column = "lastname" type = "string"/>
       <property name = "age" column = "age" type = "int"/>
-      <property name="carModel" column="car_model" type="string" />
+
 		
-		<set name="car" table="person_car" inverse="false" lazy="true" fetch="select" cascade="all">
+		<set name="cars" table="person_car" inverse="false" lazy="true" fetch="select" cascade="all">
 			<key>
 				<column name="person_id" not-null="true"></column>
 			</key>
